@@ -1,0 +1,23 @@
+.myParallax1 {
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background: url(images/wallpaper1.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+.myParallax2 {
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background: url(images/wallpaper4.jpg) no-repeat fixed center;
+    background-size: cover;
+}
+
+.myParallax3 {
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background: url(images/wallpaper3.jpg) no-repeat fixed center;
+    background-size: cover;
+}
