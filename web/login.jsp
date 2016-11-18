@@ -7,14 +7,18 @@
 --%>
 <%@ page import ="java.sql.*" %>
 <%
-    String userid = request.getParameter("lname");
-    String pwd = request.getParameter("lpass");
+    String userid = request.getParameter("name");
+    String pwd = request.getParameter("password");
     Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname",
-            "root", "dbpass");
+    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee",
+            "hash", "hash");
     Statement st = con.createStatement();
-    ResultSet rs;
-    rs = st.executeQuery("select * from members where uname='" + userid + "' and pass='" + pwd + "'");
+    ResultSet rs = null;
+    try {
+        rs = st.executeQuery("select * from users where user_name='" + userid + "' and pass='" + pwd + "'");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     if (rs.next()) {
         session.setAttribute("userid", userid);
         //out.println("welcome " + userid);

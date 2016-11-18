@@ -32,7 +32,7 @@
         <section id="login">
         <div class="content white">
             <div class="row" style="margin-bottom: 0em">
-                <form class="col s12" method="post" action="#">
+                <form class="col s12" method="post" action="login.jsp">
                     <div class="row" style="margin-left: 3em; margin-right: 3em">
                         <div class="input-field col s3" style="margin-left: 30em">
                             <i class="material-icons prefix">account_circle</i>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div class="row" style="margin-left: 45em">
-                        <a class="waves-effect waves-light btn" href="welcome.jsp" style="width: 10em">Login</a>
+                        <a class="waves-effect waves-light btn" href="login.jsp" style="width: 10em">Login</a>
                         <a class="waves-effect waves-light btn" style="width: 10em; margin-left: 7em">Reset</a>
                         <a class="btn-floating btn-large waves-effect waves-light red" href="#register" style="margin-left: 7em"><i class="material-icons">add</i></a>
                     </div>
@@ -54,10 +54,10 @@
         </div>
         </section>
         <div class="parallax-container myParallax2"></div>
-        <section id="register" style="-moz-animation: ">
+        <section id="register" >
         <div class="content white">
             <div class="row" style="margin-bottom: 0em">
-                <form class="col s12" method="post" action="#">
+                <form class="col s12" method="post" action="registration.jsp">
                     <div class="row" style="margin-left: 3em; margin-right: 3em">
                         <div class="input-field col s3" style="margin-left: 30em">
                             <input placeholder="Username" id="rname" type="text" style="width: 20em" class="active validate" required>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <div class="row" style="margin-left: 45em">
-                        <a class="waves-effect waves-light btn" href="welcome.jsp" style="width: 10em">Register</a>
+                        <a class="waves-effect waves-light btn" href="registration.jsp" style="width: 10em">Register</a>
                         <a class="waves-effect waves-light btn" style="width: 10em; margin-left: 7em">Reset</a>
                     </div>
                 </form>
