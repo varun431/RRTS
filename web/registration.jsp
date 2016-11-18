@@ -1,3 +1,4 @@
+<%@ page import ="java.sql.*" %>
 <%--
   Created by IntelliJ IDEA.
   User: HaSh
@@ -5,21 +6,24 @@
   Time: 10:44 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import ="java.sql.*" %>
 <%
-    //String user = request.getParameter("name");
-    String pwd = request.getParameter("password");
-    String name = request.getParameter("name");
-    //String lname = request.getParameter("lname");
-    String email = request.getParameter("email");
-    Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbname",
-            "root", "dbpass");
+
+    String pwd = request.getParameter("rpassword");
+    String name = request.getParameter("rname");
+    String DB_URL = "jdbc:mysql://localhost:3306/j2ee";
+    String query = String.format("insert into users(user_name, pass) values ('%s','%s')", name, pwd);
+    Connection con = DriverManager.getConnection(DB_URL,"hash", "hash");
     Statement st = con.createStatement();
-    //ResultSet rs;
-    int i = st.executeUpdate("insert into members(first_name, last_name, email, uname, pass, regdate) values ('" + fname + "','" + lname + "','" + email + "','" + user + "','" + pwd + "', CURDATE())");
+
+    Class.forName("com.mysql.jdbc.Driver");
+
+
+
+    int i = 0;
+    i = st.executeUpdate(query);
+
     if (i > 0) {
-        //session.setAttribute("userid", user);
+        session.setAttribute("userid", name);
         response.sendRedirect("welcome.jsp");
         // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {

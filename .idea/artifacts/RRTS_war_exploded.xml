@@ -9,6 +9,10 @@
           <element id="library" level="application" name="bounce" />
           <element id="library" level="application" name="jquery-2.1.1" />
         </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="D:/Softwares/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8/mysql-connector-java-5.0.8-bin.jar" />
+          <element id="library" level="application" name="mysql-connector-java-5.0.8-bin" />
+        </element>
       </element>
     </root>
   </artifact>

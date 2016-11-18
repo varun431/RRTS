@@ -30,7 +30,7 @@
                 </nav>
             </header>
 
-            <div class="container" style="margin-top: 15em; animation: ">
+            <div class="container" style="margin-top: 15em">
                 <section id="welcome">
                     <%--<span class="image"><img src="images/pic01.jpg" alt=""></span>--%>
                     <div class="row">

@@ -32,20 +32,21 @@
         <section id="login">
         <div class="content white">
             <div class="row" style="margin-bottom: 0em">
-                <form class="col s12" method="post" action="login.jsp">
+                <form class="col s12" method="get" action="login.jsp">
                     <div class="row" style="margin-left: 3em; margin-right: 3em">
                         <div class="input-field col s3" style="margin-left: 30em">
                             <i class="material-icons prefix">account_circle</i>
-                            <input placeholder="Username" id="name" type="text" style="width: 20em" class="active validate" required>
+                            <input name="name" placeholder="Username" id="name" type="text" style="width: 20em" class="active validate" required>
                             <%--<label for="name">Username</label>--%>
                         </div>
                         <div class="input-field col s3">
                             <%--<label for="password">Password</label>--%>
-                            <input id="password" type="password" placeholder="Password" style="width: 20em" class="validate" required>
+                            <input name="password" id="password" type="password" placeholder="Password" style="width: 20em" class="validate" required>
                         </div>
                     </div>
                     <div class="row" style="margin-left: 45em">
-                        <a class="waves-effect waves-light btn" href="login.jsp" style="width: 10em">Login</a>
+                        <input text="Login" type="submit">
+                        <%--<a class="waves-effect waves-light btn" href="login.jsp" style="width: 10em">Login</a>--%>
                         <a class="waves-effect waves-light btn" style="width: 10em; margin-left: 7em">Reset</a>
                         <a class="btn-floating btn-large waves-effect waves-light red" href="#register" style="margin-left: 7em"><i class="material-icons">add</i></a>
                     </div>
@@ -60,10 +61,10 @@
                 <form class="col s12" method="post" action="registration.jsp">
                     <div class="row" style="margin-left: 3em; margin-right: 3em">
                         <div class="input-field col s3" style="margin-left: 30em">
-                            <input placeholder="Username" id="rname" type="text" style="width: 20em" class="active validate" required>
+                            <input name="rname" placeholder="Username" id="rname" type="text" style="width: 20em" class="active validate" required>
                         </div>
                         <div class="input-field col s3">
-                            <input id="rpassword" type="password" placeholder="Password" style="width: 20em" class="validate" required>
+                            <input name="rpassword" id="rpassword" type="password" placeholder="Password" style="width: 20em" class="validate" required>
                         </div>
                     </div>
                     <div class="row" style="margin-left: 3em; margin-right: 3em">
@@ -72,7 +73,8 @@
                         </div>
                     </div>
                     <div class="row" style="margin-left: 45em">
-                        <a class="waves-effect waves-light btn" href="registration.jsp" style="width: 10em">Register</a>
+                        <input text="Register" type="submit">
+                        <%--<a class="waves-effect waves-light btn" href="registration.jsp" style="width: 10em">Register</a>--%>
                         <a class="waves-effect waves-light btn" style="width: 10em; margin-left: 7em">Reset</a>
                     </div>
                 </form>
