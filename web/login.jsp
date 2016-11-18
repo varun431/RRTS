@@ -9,10 +9,24 @@
 <%
     String userid = request.getParameter("name");
     String pwd = request.getParameter("password");
-    Class.forName("com.mysql.jdbc.Driver");
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee",
-            "hash", "hash");
-    Statement st = con.createStatement();
+    try {
+        Class.forName("com.mysql.jdbc.Driver");
+    } catch (ClassNotFoundException e) {
+        e.printStackTrace();
+    }
+    Connection con = null;
+    try {
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee",
+                "hash", "hash");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    Statement st = null;
+    try {
+        st = con.createStatement();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     ResultSet rs = null;
     try {
         rs = st.executeQuery("select * from users where user_name='" + userid + "' and pass='" + pwd + "'");
