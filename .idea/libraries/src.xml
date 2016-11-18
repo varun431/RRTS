@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES>
+      <root url="jar://D:/Softwares/apache-tomcat-8.5.6-windows-x64/apache-tomcat-8.5.6/lib/servlet-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://C:/Program Files/MySQL/Connector.ODBC 5.3" />
+    </NATIVE>
+    <SOURCES>
+      <root url="jar://D:/Softwares/mysql-connector-java-5.0.8.zip!/mysql-connector-java-5.0.8/src" />
+    </SOURCES>
+  </library>
+</component>

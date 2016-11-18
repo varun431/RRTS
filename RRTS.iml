@@ -19,8 +19,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.5.6" level="application_server_libraries" />
-    <orderEntry type="library" name="bounce" level="application" />
-    <orderEntry type="library" name="jquery-2.1.1" level="application" />
+    <orderEntry type="library" exported="" scope="PROVIDED" name="Tomcat 8.5.6" level="application_server_libraries" />
+    <orderEntry type="library" exported="" name="bounce" level="application" />
+    <orderEntry type="library" exported="" name="jquery-2.1.1" level="application" />
+    <orderEntry type="library" exported="" name="src" level="project" />
   </component>
 </module>

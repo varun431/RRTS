@@ -6,6 +6,8 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="RRTS" />
+          <element id="library" level="application" name="bounce" />
+          <element id="library" level="application" name="jquery-2.1.1" />
         </element>
       </element>
     </root>

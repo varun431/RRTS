@@ -9,36 +9,39 @@
 <%
     String userid = request.getParameter("name");
     String pwd = request.getParameter("password");
-    try {
-        Class.forName("com.mysql.jdbc.Driver");
-    } catch (ClassNotFoundException e) {
-        e.printStackTrace();
-    }
+    Statement st = null;
     Connection con = null;
     try {
+        Class.forName("com.mysql.jdbc.Driver");
+
         con = DriverManager.getConnection("jdbc:mysql://localhost:3306/j2ee",
                 "hash", "hash");
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-    Statement st = null;
-    try {
         st = con.createStatement();
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
-    ResultSet rs = null;
-    try {
+        ResultSet rs = null;
         rs = st.executeQuery("select * from users where user_name='" + userid + "' and pass='" + pwd + "'");
-    } catch (SQLException e) {
+        if (rs.next()) {
+            session.setAttribute("userid", userid);
+            //out.println("welcome " + userid);
+            //out.println("<a href='logout.jsp'>Log out</a>");
+            response.sendRedirect("success.jsp");
+        } else {
+            out.println("Invalid password <a href='index.jsp'>try again</a>");
+        }
+    } catch (Exception e) {
         e.printStackTrace();
-    }
-    if (rs.next()) {
-        session.setAttribute("userid", userid);
-        //out.println("welcome " + userid);
-        //out.println("<a href='logout.jsp'>Log out</a>");
-        response.sendRedirect("success.jsp");
-    } else {
-        out.println("Invalid password <a href='index.jsp'>try again</a>");
+    } finally {
+        try {
+            if (st != null)
+                st.close();
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
+        try {
+            if (con != null) {
+                con.close();
+            }
+        } catch (SQLException e2) {
+            e2.printStackTrace();
+        }
     }
 %>
